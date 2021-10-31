@@ -6,7 +6,6 @@ import com.company.gestionproj.project.Requerimiento;
 import com.company.gestionproj.project.RequerimientoFuncional;
 import com.company.gestionproj.project.RequerimientoNoFuncional;
 
-import com.company.gestionproj.project.*;
 import com.company.gestionproj.team.IntegranteXproyecto;
 import com.company.gestionproj.team.Integrante;
 

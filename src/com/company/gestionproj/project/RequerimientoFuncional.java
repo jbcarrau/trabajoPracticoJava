@@ -1,9 +1,11 @@
 package com.company.gestionproj.project;
 
-public class RequerimientoFuncional extends Requerimiento{
+import com.company.gestionproj.tiempo.Estimable;
 
-    Double estimacion;  //> atributo del objeto el tiempo en que se finaliza el requerimiento
-                        //> en horas
+public class RequerimientoFuncional extends Requerimiento implements Estimable {
+
+    Double estimacion;  // atributo del objeto el tiempo en que se finaliza el requerimiento
+                        // en horas
 
     public RequerimientoFuncional(String nombre, Proyecto proyecto, Double estimacion) {
         super(nombre, proyecto);
@@ -14,4 +16,9 @@ public class RequerimientoFuncional extends Requerimiento{
     public Double estimate() {
         return this.estimacion;
     }
+
+    @Override
+    public Double estimatePresupuesto(){
+        return null;
+    };
 }

@@ -2,8 +2,11 @@ package com.company.gestionproj.project;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collection;
 
-public class RequerimientoNoFuncional extends Requerimiento {
+import com.company.gestionproj.tiempo.Estimable;
+
+public class RequerimientoNoFuncional extends Requerimiento implements Estimable {
 
     Double costoFijo; //
     List<SubrequerimientosNF> listSubRNF = new ArrayList<>();

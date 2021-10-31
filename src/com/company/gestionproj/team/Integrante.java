@@ -2,11 +2,8 @@ package com.company.gestionproj.team;
 
 import com.company.gestionproj.project.Proyecto;
 
-import java.util.ArrayList;
-import java.util.List;
 
-
-public class Integrante extends IntegranteXproyecto{
+public class Integrante extends IntegranteXproyecto {
 
     private String Nombre;
 
@@ -31,7 +28,7 @@ public class Integrante extends IntegranteXproyecto{
     public Integrante(Proyecto proy, String nombre, String[] arr) {
         super(proy);
         Nombre = nombre;
-        Desarrollador dev = new Desarrollador(arr);
+        Desarollador dev = new Desarollador(arr);
     }
 
 

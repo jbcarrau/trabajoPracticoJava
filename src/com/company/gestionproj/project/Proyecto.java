@@ -29,7 +29,7 @@ public class Proyecto implements Estimable {
         return total;
     }
 
-    public void muestraRequerimientos(){
+    public void muestraRequerimientos() {
         Iterator<Requerimiento> it = requerimientos.iterator();
         while(it.hasNext()){
             System.out.println(it.next());;
