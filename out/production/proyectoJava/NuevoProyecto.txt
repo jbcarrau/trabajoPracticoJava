@@ -12,3 +12,17 @@ CU3
 3.5
 Requerimiento no funcional
 CUNF1
+Proyecto
+Gestion ProyectosA
+30000
+Requerimiento funcional
+CU1A
+4.5
+Requerimiento funcional
+CU2A
+4.6
+Requerimiento funcional
+CU3A
+4.4
+Requerimiento no funcional
+CUNF1A
