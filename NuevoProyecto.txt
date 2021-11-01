@@ -1,0 +1,14 @@
+Proyecto
+Gestion Proyectos
+30000
+Requerimiento funcional
+CU1
+3.5
+Requerimiento funcional
+CU2
+3.5
+Requerimiento funcional
+CU3
+3.5
+Requerimiento no funcional
+CUNF1

@@ -35,6 +35,7 @@ public class Main {
                     nombreProy = scanner.nextLine();
                     presu = Double.parseDouble(scanner.nextLine());
                     proj = new Proyecto(nombreProy, presu);
+                    // estaimacionAdicional =
                     break;
                 case "requerimiento funcional":
                     nombreReq = scanner.nextLine();
@@ -48,7 +49,7 @@ public class Main {
                     //System.out.println(req);
                     break;
             }
-            ;}
+        }
 
         scanner.close();
         return proj;
@@ -57,7 +58,7 @@ public class Main {
     public static void main(String[] args) throws IOException, RequerimientoYaTieneProyecto {
         //BufferedReader in = new BufferedReader (new InputStreamReader(System.in));
         //Scanner sc = new Scanner(System.in);
-        String archivo = "C:/Users/Juan Benjamin/Desktop/NuevoProyecto.txt";
+        String archivo = "NuevoProyecto.txt";
 
         Proyecto proj = (Proyecto)readFile(archivo);
         Proyecto proj1 = new Proyecto("GestionJoaq1", 38000D);
@@ -115,6 +116,7 @@ public class Main {
         } catch (RequerimientoYaTieneProyecto e) {
             e.printStackTrace();
         }
-*/
+
     }
+    */
 }

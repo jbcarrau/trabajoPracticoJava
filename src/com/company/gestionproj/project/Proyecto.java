@@ -1,6 +1,6 @@
 package com.company.gestionproj.project;
 
-import com.company.gestionproj.team.IntegranteXproyecto
+import com.company.gestionproj.team.IntegranteXproyecto;
 import com.company.gestionproj.exception.RequerimientoYaTieneProyecto;
 import com.company.gestionproj.tiempo.Estimable;
 

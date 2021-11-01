@@ -31,7 +31,6 @@ public class Integrante extends IntegranteXproyecto {
         Desarollador dev = new Desarollador(arr);
     }
 
-
     @Override
     public String toString() {
         return "Proyecto{" +
