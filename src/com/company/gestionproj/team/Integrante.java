@@ -6,13 +6,14 @@ import com.company.gestionproj.project.Proyecto;
 public class Integrante extends IntegranteXproyecto {
 
     private String Nombre;
+    private String Rol;
 
-    public Integrante(Proyecto proy, String nombre, String str, String tipo) {
+    public Integrante(Proyecto proy, String nombre, String rol, String tipo) {
         super(proy);
         Nombre = nombre;
-        str.toLowerCase();
-        //System.out.println(str);
-        switch(str) {
+        Rol = rol;
+        rol.toLowerCase();
+        switch(rol) {
             case "analista":
                 Analista analist = new Analista(tipo);
                 break;
@@ -22,19 +23,21 @@ public class Integrante extends IntegranteXproyecto {
             case "lider" :
                 Lider lid = new Lider();
                 break;
+            case "desarrollador":
+                Desarollador dev = new Desarollador();
         }
     }
 
-    public Integrante(Proyecto proy, String nombre, String[] arr) {
-        super(proy);
-        Nombre = nombre;
-        Desarollador dev = new Desarollador(arr);
-    }
+//    public Integrante(Proyecto proy, String nombre, String[] arr) {
+//        super(proy);
+//        Nombre = nombre;
+//        Desarollador dev = new Desarollador(arr);
+//    }
 
     @Override
     public String toString() {
-        return "Proyecto{" +
-                "nombre='" + Nombre +
+        return "Integrante{" +
+                "nombre='" + Nombre + "' Rol='" + Rol +
                 '}';
     }
 }

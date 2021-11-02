@@ -21,7 +21,7 @@ import java.lang.*;
 public class Main {
 
     public static Object readFile(String archivo) throws FileNotFoundException {
-        String nombre, cad;
+        String nombre, cad, funcion, tipo;
         Double presu, estimacion;
 
         Scanner scanner = new Scanner(new File(archivo));
@@ -29,10 +29,16 @@ public class Main {
         Proyecto proj = null;
         RequerimientoFuncional reqF = null;
         RequerimientoNoFuncional reqNF = null;
+        Integrante in = null;
+
         while (scanner.hasNextLine()) {
             cad = scanner.nextLine().toLowerCase() ;
             switch(cad){
                 case "proyecto":
+                    if(proj!=null){System.out.println(proj);
+                        proj.muestraRequerimientos();
+                        proj.muestraIntegrantes();
+                    };
                     nombre = scanner.nextLine();
                     presu = Double.parseDouble(scanner.nextLine());
                     proj = new Proyecto(nombre, presu);
@@ -51,9 +57,17 @@ public class Main {
                     nombre = scanner.nextLine();
                     reqNF.agregarSubRequerimientoNF(nombre);
                     break;
+                case "integrante":
+                    nombre = scanner.nextLine();
+                    funcion = scanner.nextLine();
+                    tipo = scanner.nextLine();
+                    in = new Integrante(proj, nombre, funcion, tipo);
+                    break;
             }
         }
-
+        System.out.println(proj);
+        proj.muestraRequerimientos();
+        proj.muestraIntegrantes();
         scanner.close();
         return proj;
     };
@@ -63,25 +77,15 @@ public class Main {
         //Scanner sc = new Scanner(System.in);
         String archivo = "NuevoProyecto.txt";
 
-        Proyecto proj = (Proyecto)readFile(archivo);
-        Proyecto proj1 = new Proyecto("GestionJoaq1", 38000D);
-
-        RequerimientoFuncional reqNo0 = new RequerimientoFuncional("CU1", proj1, 3D);
-        RequerimientoFuncional reqNo1 = new RequerimientoFuncional("CU1", proj1, 3D);
-        RequerimientoNoFuncional reqNo2 = new RequerimientoNoFuncional("CUNF1", proj1);
-        reqNo2.agregarSubRequerimientoNF("CUNF1_A");
+        Proyecto proj = (Proyecto)readFile(archivo); //todo : Si muestra todo en readFile, no hace falta que retorne un objeto
 
 
-        String[] arr= new String[]{"Python", "JavaScript"};
-        IntegranteXproyecto in1 = new Integrante(proj, "pepe", arr);
-        IntegranteXproyecto in2 = new Integrante(proj,"Benja", "Analista", "Funcional");
-        IntegranteXproyecto in3 = new Integrante(proj,"dwight", "Tester", "Dominio");
+//        String[] arr= new String[]{"Python", "JavaScript"};
+//        IntegranteXproyecto in1 = new Integrante(proj, "pepe", arr);
+//        IntegranteXproyecto in2 = new Integrante(proj,"Benja", "Analista", "Funcional");
+//        IntegranteXproyecto in3 = new Integrante(proj,"dwight", "Tester", "Dominio");
+//        IntegranteXproyecto in4 = new Integrante(proj,"Micheal", "Lider", "Dominio");
 
-        System.out.println(proj1);
-        proj1.muestraRequerimientos();
-        System.out.println(proj);
-        proj.muestraRequerimientos();
-        proj.muestraIntegrantes();
     }
 /*
     public static void main(String[] args) {
