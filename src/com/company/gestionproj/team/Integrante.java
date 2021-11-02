@@ -11,7 +11,7 @@ public class Integrante extends IntegranteXproyecto {
         super(proy);
         Nombre = nombre;
         str.toLowerCase();
-        System.out.println(str);
+        //System.out.println(str);
         switch(str) {
             case "analista":
                 Analista analist = new Analista(tipo);

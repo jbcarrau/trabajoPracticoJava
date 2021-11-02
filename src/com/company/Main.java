@@ -21,32 +21,35 @@ import java.lang.*;
 public class Main {
 
     public static Object readFile(String archivo) throws FileNotFoundException {
-        String nombreProy, nombreReq, cad;
+        String nombre, cad;
         Double presu, estimacion;
 
         Scanner scanner = new Scanner(new File(archivo));
 
         Proyecto proj = null;
-        Requerimiento req = null;
+        RequerimientoFuncional reqF = null;
+        RequerimientoNoFuncional reqNF = null;
         while (scanner.hasNextLine()) {
             cad = scanner.nextLine().toLowerCase() ;
             switch(cad){
                 case "proyecto":
-                    nombreProy = scanner.nextLine();
+                    nombre = scanner.nextLine();
                     presu = Double.parseDouble(scanner.nextLine());
-                    proj = new Proyecto(nombreProy, presu);
-                    // estaimacionAdicional =
+                    proj = new Proyecto(nombre, presu);
                     break;
                 case "requerimiento funcional":
-                    nombreReq = scanner.nextLine();
+                    nombre = scanner.nextLine();
                     estimacion = Double.parseDouble(scanner.nextLine());
-                    req = new RequerimientoFuncional(nombreReq, proj, estimacion);
+                    reqF = new RequerimientoFuncional(nombre, proj, estimacion);
                     //System.out.println(req);
                     break;
                 case "requerimiento no funcional":
-                    nombreReq = scanner.nextLine();
-                    req = new RequerimientoNoFuncional(nombreReq, proj);
-                    //System.out.println(req);
+                    nombre = scanner.nextLine();
+                    reqNF = new RequerimientoNoFuncional(nombre, proj);
+                    break;
+                case "subrequerimiento":
+                    nombre = scanner.nextLine();
+                    reqNF.agregarSubRequerimientoNF(nombre);
                     break;
             }
         }
@@ -66,6 +69,7 @@ public class Main {
         RequerimientoFuncional reqNo0 = new RequerimientoFuncional("CU1", proj1, 3D);
         RequerimientoFuncional reqNo1 = new RequerimientoFuncional("CU1", proj1, 3D);
         RequerimientoNoFuncional reqNo2 = new RequerimientoNoFuncional("CUNF1", proj1);
+        reqNo2.agregarSubRequerimientoNF("CUNF1_A");
 
 
         String[] arr= new String[]{"Python", "JavaScript"};
@@ -79,8 +83,8 @@ public class Main {
         proj.muestraRequerimientos();
         proj.muestraIntegrantes();
     }
-
-    /* public static void main(String[] args) {
+/*
+    public static void main(String[] args) {
         try {
             Proyecto proj = new Proyecto("GestionProyectos", 30000D);
             Proyecto proj1 = new Proyecto("GestionJoaq1", 38000D);
@@ -109,7 +113,7 @@ public class Main {
 
             System.out.println(proyectos);
 
-            proj.addRequerimiento(req11);
+            proj.addRequerimiento(req11); // Pone a prueba la exception requerimientoYaTiene...
 
             System.out.println(proyectos);
 
@@ -118,5 +122,5 @@ public class Main {
         }
 
     }
-    */
+*/
 }
