@@ -1,6 +1,7 @@
 package com.company.gestionproj.project;
 
 import com.company.gestionproj.team.IntegranteXproyecto;
+import com.company.gestionproj.team.Integrante;
 import com.company.gestionproj.exception.RequerimientoYaTieneProyecto;
 import com.company.gestionproj.tiempo.Estimable;
 
@@ -10,7 +11,8 @@ import java.util.Iterator;
 
 public class Proyecto implements Estimable {
     List<Requerimiento> requerimientos = new ArrayList<>();
-    List<IntegranteXproyecto> integrantes = new ArrayList<IntegranteXproyecto>();
+    List<Integrante> integrantes = new ArrayList<Integrante>();
+
 
     String nombre;
     private Double presupuesto;
@@ -36,7 +38,7 @@ public class Proyecto implements Estimable {
         }
     };
     public void muestraIntegrantes(){
-        Iterator<IntegranteXproyecto> it = integrantes.iterator();
+        Iterator<Integrante> it = integrantes.iterator();
         while(it.hasNext()){
             System.out.println(it.next());;
         }
@@ -79,7 +81,7 @@ public class Proyecto implements Estimable {
         return false;
     }
 
-    public void addIntegranteProy(IntegranteXproyecto nuevo){
+    public void addIntegranteProy(Integrante nuevo){
         integrantes.add(nuevo);
     }
 

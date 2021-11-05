@@ -9,7 +9,6 @@ public class Integrante extends IntegranteXproyecto {
     private String Rol;
 
     public Integrante(Proyecto proy, String nombre, String rol, String tipo) {
-        super(proy);
         Nombre = nombre;
         Rol = rol;
         rol.toLowerCase();
@@ -26,6 +25,7 @@ public class Integrante extends IntegranteXproyecto {
             case "desarrollador":
                 Desarollador dev = new Desarollador();
         }
+        proy.addIntegranteProy(this);
     }
 
 //    public Integrante(Proyecto proy, String nombre, String[] arr) {

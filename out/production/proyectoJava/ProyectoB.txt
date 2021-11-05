@@ -1,0 +1,36 @@
+Proyecto
+Gestion ProyectosA
+30000
+Requerimiento funcional
+CU1A
+4.5
+Requerimiento funcional
+CU2A
+4.6
+Requerimiento funcional
+CU3A
+4.4
+Requerimiento no funcional
+CUNF2A
+subrequerimiento
+CUNF2_A
+subrequerimiento
+CUNF2_B
+subrequerimiento
+CUNF2_C
+Integrante
+Carlitos
+Lider
+
+Integrante
+Herni
+Tester
+Dominio
+Integrante
+Juansito
+Analista
+No Funcional
+Integrante
+Gusti
+Desarrollador
+

@@ -5,6 +5,8 @@ import com.company.gestionproj.project.Proyecto;
 import com.company.gestionproj.project.Requerimiento;
 import com.company.gestionproj.project.RequerimientoFuncional;
 import com.company.gestionproj.project.RequerimientoNoFuncional;
+import com.company.gestionproj.ReadFile;
+
 
 import com.company.gestionproj.team.IntegranteXproyecto;
 import com.company.gestionproj.team.Integrante;
@@ -73,18 +75,24 @@ public class Main {
     };
 
     public static void main(String[] args) throws IOException, RequerimientoYaTieneProyecto {
-        //BufferedReader in = new BufferedReader (new InputStreamReader(System.in));
-        //Scanner sc = new Scanner(System.in);
-        String archivo = "NuevoProyecto.txt";
 
-        Proyecto proj = (Proyecto)readFile(archivo); //todo : Si muestra todo en readFile, no hace falta que retorne un objeto
+
+        ReadFile rf = new ReadFile();
+        Proyecto projA = (Proyecto)rf.readProyect("ProyectoA.txt");
+        Proyecto projB = (Proyecto)rf.readProyect("ProyectoB.txt");
+
+
+
+        System.out.println(projA);
+        projA.muestraRequerimientos();
+        projA.muestraIntegrantes();
+
+        System.out.println(projB);
+        projB.muestraRequerimientos();
+        projB.muestraIntegrantes();
 
 
 //        String[] arr= new String[]{"Python", "JavaScript"};
-//        IntegranteXproyecto in1 = new Integrante(proj, "pepe", arr);
-//        IntegranteXproyecto in2 = new Integrante(proj,"Benja", "Analista", "Funcional");
-//        IntegranteXproyecto in3 = new Integrante(proj,"dwight", "Tester", "Dominio");
-//        IntegranteXproyecto in4 = new Integrante(proj,"Micheal", "Lider", "Dominio");
 
     }
 /*
