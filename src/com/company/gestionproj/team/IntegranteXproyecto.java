@@ -9,7 +9,7 @@ public abstract class IntegranteXproyecto {
     public IntegranteXproyecto(){}
 
     public void registraHoras(Double h){
-        HorasTrabajadas += h;
+        HorasTrabajadas = h;
     }
 
     public Double getHorasTrabajadas() {

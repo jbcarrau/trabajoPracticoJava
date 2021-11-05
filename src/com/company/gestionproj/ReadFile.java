@@ -56,7 +56,7 @@ public class ReadFile {
                     funcion = scanner.nextLine();
                     tipo = scanner.nextLine();
                     in = new Integrante(proj, nombre, funcion, tipo);
-                    //in.registraHoras(30.0);
+                    in.registraHoras(30.0);
                     break;
             }
         }
