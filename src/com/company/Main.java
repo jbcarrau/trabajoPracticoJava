@@ -21,11 +21,6 @@ public class Main {
         Proyecto projA = (Proyecto)rf.readProyect("ProyectoA.txt");
         Proyecto projB = (Proyecto)rf.readProyect("ProyectoB.txt");
 
-
-        Integrante benja = new Integrante(projA, "Benja","Desarrollador", "DEV");
-        //benja.registraHoras(50.0);
-        //System.out.println(benja.getHorasTrabajadas());
-
         System.out.println(projA);
         projA.muestraRequerimientos();
         projA.muestraIntegrantes();
@@ -34,6 +29,9 @@ public class Main {
         projB.muestraRequerimientos();
         projB.muestraIntegrantes();
 
+        System.out.println("Ingrese horas por Integrate: ");
+        projA.registraHoras();
+        System.out.println(projA.getTotalHs());
 
 //        String[] arr= new String[]{"Python", "JavaScript"};
 

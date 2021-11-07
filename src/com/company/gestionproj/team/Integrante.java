@@ -28,11 +28,9 @@ public class Integrante extends IntegranteXproyecto {
         proy.addIntegranteProy(this);
     }
 
-//    public Integrante(Proyecto proy, String nombre, String[] arr) {
-//        super(proy);
-//        Nombre = nombre;
-//        Desarollador dev = new Desarollador(arr);
-//    }
+    public String getNombre(){
+        return Nombre;
+    }
 
     @Override
     public String toString() {

@@ -56,13 +56,14 @@ public class ReadFile {
                     funcion = scanner.nextLine();
                     tipo = scanner.nextLine();
                     in = new Integrante(proj, nombre, funcion, tipo);
-                    in.registraHoras(30.0);
+                    //in.registraHoras(10.5);
                     break;
             }
         }
 //        System.out.println(proj);
 //        proj.muestraRequerimientos();
 //        proj.muestraIntegrantes();
+        //System.out.println(in.getHorasTrabajadas());
         scanner.close();
         return proj;
     }

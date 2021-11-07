@@ -8,14 +8,15 @@ import com.company.gestionproj.tiempo.Estimable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Iterator;
+import java.util.Scanner;
 
 public class Proyecto implements Estimable {
     List<Requerimiento> requerimientos = new ArrayList<>();
     List<Integrante> integrantes = new ArrayList<Integrante>();
 
-
     String nombre;
     private Double presupuesto;
+    private int totalHs;
 
     public Proyecto(String nombre, Double presu) { //Discriminar presupuesto por Area
         this.nombre = nombre;
@@ -44,6 +45,27 @@ public class Proyecto implements Estimable {
         }
     };
 
+    public void registraHoras(Proyecto this){
+        Scanner sc = new Scanner(System.in);
+        Iterator<Integrante> it = integrantes.iterator();
+        while(it.hasNext()){
+            Integrante person = it.next();
+            System.out.println(person.getNombre() + ": ");
+            //Acumula en horas trabajadas
+            person.sumaHoras(sc.nextInt(), this);
+        }
+
+        sc.close();
+    };
+
+    public void totalHs(int total){
+        totalHs = total;
+    }
+
+    public int getTotalHs(){
+        return totalHs;
+    }
+
     @Override
     public Double estimatePresupuesto(){ //
         return null;
@@ -68,17 +90,6 @@ public class Proyecto implements Estimable {
 
         this.requerimientos.add(req);
 
-    }
-
-    public boolean verificaSiExiste(Requerimiento req){
-        Iterator<Requerimiento> it = requerimientos.iterator();
-        while(it.hasNext()) {
-            if (it.next().getNombre() != req.getNombre()) {
-                return true;
-            }
-            else{return false;}
-        }
-        return false;
     }
 
     public void addIntegranteProy(Integrante nuevo){

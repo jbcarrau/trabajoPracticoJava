@@ -4,15 +4,17 @@ package com.company.gestionproj.team;
 import com.company.gestionproj.project.Proyecto;
 
 public abstract class IntegranteXproyecto {
-    private Double HorasTrabajadas;
+    private int HorasTrabajadas;
 
     public IntegranteXproyecto(){}
 
-    public void registraHoras(Double h){
-        HorasTrabajadas = h;
+    public void sumaHoras(int h, Proyecto pr){
+        this.HorasTrabajadas += h;
+        System.out.println(HorasTrabajadas);
+        exportaHoras(pr);//Todo: tiene que exportar las horas cuando haya sumando todas las horas trabajadas
     }
 
-    public Double getHorasTrabajadas() {
-        return HorasTrabajadas;
+    public void exportaHoras(Proyecto pr) {
+        pr.totalHs(HorasTrabajadas);
     }
 }
