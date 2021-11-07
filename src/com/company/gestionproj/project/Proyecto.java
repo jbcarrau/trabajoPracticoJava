@@ -54,12 +54,12 @@ public class Proyecto implements Estimable {
             //Acumula en horas trabajadas
             person.sumaHoras(sc.nextInt(), this);
         }
-
-        sc.close();
+        //Todo Si aca cierro el scanner, no me deja ejecutar el siguiente read. Cuando quiere hacer el sc.nextInt(),
+        //Todo para los integrantes del proyecto B me tira la excepcion NoSuchElementException
     };
 
     public void totalHs(int total){
-        totalHs = total;
+        totalHs += total;
     }
 
     public int getTotalHs(){

@@ -9,9 +9,8 @@ public abstract class IntegranteXproyecto {
     public IntegranteXproyecto(){}
 
     public void sumaHoras(int h, Proyecto pr){
-        this.HorasTrabajadas += h;
-        System.out.println(HorasTrabajadas);
-        exportaHoras(pr);//Todo: tiene que exportar las horas cuando haya sumando todas las horas trabajadas
+        this.HorasTrabajadas = h;
+        exportaHoras(pr);
     }
 
     public void exportaHoras(Proyecto pr) {

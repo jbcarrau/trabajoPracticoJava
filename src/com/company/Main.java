@@ -16,22 +16,29 @@ public class Main {
 
     public static void main(String[] args) throws IOException, RequerimientoYaTieneProyecto {
 
-
+        //LECTURA DESDE TXT / CREACION DE PROYECTOS CON SUS REQUERIMIENTOS E INTEGRANTES
         ReadFile rf = new ReadFile();
         Proyecto projA = (Proyecto)rf.readProyect("ProyectoA.txt");
         Proyecto projB = (Proyecto)rf.readProyect("ProyectoB.txt");
 
+        //INGRESO DE HORAS POR INTEGRANTE
+        System.out.println("Ingrese horas por Integrante: ");
+        projB.registraHoras();
+        System.out.println("Ingrese horas por Integrante: ");
+        projA.registraHoras();
+
+        //MUESTRA PROYECTOS
         System.out.println(projA);
         projA.muestraRequerimientos();
         projA.muestraIntegrantes();
+        System.out.println("Total de horas: " + projA.getTotalHs());
+
+        System.out.println("---------------------------------------------------------------");
 
         System.out.println(projB);
         projB.muestraRequerimientos();
         projB.muestraIntegrantes();
-
-        System.out.println("Ingrese horas por Integrate: ");
-        projA.registraHoras();
-        System.out.println(projA.getTotalHs());
+        System.out.println("Total de horas: " + projB.getTotalHs());
 
 //        String[] arr= new String[]{"Python", "JavaScript"};
 
