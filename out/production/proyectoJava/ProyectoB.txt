@@ -21,16 +21,16 @@ CUNF2_C
 Integrante
 Carlitos
 Lider
-
+25
 Integrante
 Herni
 Tester
-Dominio
+4
 Integrante
 Juansito
 Analista
-No Funcional
+6
 Integrante
 Gusti
 Desarrollador
-
+3

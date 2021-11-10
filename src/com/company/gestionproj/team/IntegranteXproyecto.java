@@ -4,11 +4,11 @@ package com.company.gestionproj.team;
 import com.company.gestionproj.project.Proyecto;
 
 public abstract class IntegranteXproyecto {
-    private int HorasTrabajadas;
+    private Double HorasTrabajadas;
 
     public IntegranteXproyecto(){}
 
-    public void sumaHoras(int h, Proyecto pr){
+    public void sumaHoras(Double h, Proyecto pr){
         this.HorasTrabajadas = h;
         exportaHoras(pr);
     }

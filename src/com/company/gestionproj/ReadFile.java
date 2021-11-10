@@ -13,8 +13,9 @@ import java.util.Scanner;
 
 public class ReadFile {
 
-    String nombre, cad, funcion, tipo;
+    String nombre, cad, rol;
     Double presu, estimacion;
+    int antiguedad;
 
     public Object readProyect(String archivo) throws FileNotFoundException, RequerimientoYaTieneProyecto {
 
@@ -29,11 +30,6 @@ public class ReadFile {
             cad = scanner.nextLine().toLowerCase();
             switch (cad) {
                 case "proyecto":
-//                    if (proj != null) {
-//                        System.out.println(proj);
-//                        proj.muestraRequerimientos();
-//                        proj.muestraIntegrantes();
-//                    }
                     nombre = scanner.nextLine();
                     presu = Double.parseDouble(scanner.nextLine());
                     proj = new Proyecto(nombre, presu);
@@ -53,22 +49,14 @@ public class ReadFile {
                     break;
                 case "integrante":
                     nombre = scanner.nextLine();
-                    funcion = scanner.nextLine();
-                    tipo = scanner.nextLine();
-                    in = new Integrante(proj, nombre, funcion, tipo);
-                    //in.registraHoras(10.5);
+                    rol = scanner.nextLine();
+                    antiguedad = scanner.nextInt();
+                    in = new Integrante(proj, nombre, rol, antiguedad);
                     break;
             }
         }
-//        System.out.println(proj);
-//        proj.muestraRequerimientos();
-//        proj.muestraIntegrantes();
-        //System.out.println(in.getHorasTrabajadas());
         scanner.close();
         return proj;
-    }
-    public void readHs(String archivo){
-
     }
 }
 

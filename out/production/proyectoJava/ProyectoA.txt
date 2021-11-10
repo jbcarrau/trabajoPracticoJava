@@ -23,16 +23,16 @@ CUNF1_D
 Integrante
 Micheal
 Lider
-
+20
 Integrante
 Dwight
 Tester
-Dominio
+5
 Integrante
 Jim
 Analista
-No Funcional
+5
 Integrante
 Oscar
 Desarrollador
-
+7
