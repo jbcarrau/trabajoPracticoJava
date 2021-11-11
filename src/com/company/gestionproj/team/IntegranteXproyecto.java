@@ -16,4 +16,8 @@ public abstract class IntegranteXproyecto {
     public void exportaHoras(Proyecto pr) {
         pr.totalHs(HorasTrabajadas);
     }
+
+    public Double getHorasTrabajadas() {
+        return HorasTrabajadas;
+    }
 }

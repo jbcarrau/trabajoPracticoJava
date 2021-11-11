@@ -16,10 +16,11 @@ public class Proyecto implements Estimable {
 
     String nombre;
     private Double presupuesto;
+    private Double presupuestoReal;
     private int totalHs;
 
     public Proyecto(String nombre, Double presu) { //Discriminar presupuesto por Area
-        this.nombre = nombre;
+        this.nombre = nombre ; this.presupuesto = presu;
     }
 
     @Override
@@ -54,6 +55,15 @@ public class Proyecto implements Estimable {
             //Acumula en horas trabajadas
             person.sumaHoras(sc.nextDouble(), this);
         }
+
+    public void calculaPresOriginal(){
+            Iterator<Integrante> it = integrantes.iterator();
+            while(it.hasNext()){
+
+            }
+        }
+
+
         //Todo Si aca cierro el scanner, no me deja ejecutar el siguiente read. Cuando quiere hacer el sc.nextInt(),
         //Todo para los integrantes del proyecto B me tira la excepcion NoSuchElementException
     };

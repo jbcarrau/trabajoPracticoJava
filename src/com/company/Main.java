@@ -27,6 +27,7 @@ public class Main {
         System.out.println("Ingrese horas por Integrante: ");
         projA.registraHoras();
 
+
         //MUESTRA PROYECTOS
         System.out.println(projA);
         projA.muestraRequerimientos();

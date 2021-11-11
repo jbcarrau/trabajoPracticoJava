@@ -22,20 +22,34 @@ public class Integrante extends IntegranteXproyecto {
         switch(rol) {
             case "analista":
                 Analista analist = new Analista();
-                //System.out.println("Ingrese Antiguedad de " + nombre);
-                //analist.setAntiguedad(sc.nextInt());
-                //setTipo();
+                System.out.println("Ingrese tipo de Analista de " + nombre);
+                analist.setTipo(sc.next());
+                //setear el valor de la hora
                 break;
             case "tester":
                 Tester test = new Tester();
-                //setTipo();
+                System.out.println("Ingrese tipo de Tester de " + nombre);
+                test.setTipo(sc.next());
+                //setear el valor de la hora
                 break;
             case "lider" :
                 Lider lid = new Lider();
+                //setear el valor de la hora
                 break;
             case "desarrollador":
                 Desarollador dev = new Desarollador();
-                //setCategoria();
+                String[] arr= new String[20];
+                int i = 0;
+                String lang;
+                System.out.println("Ingrese la Categoria de " + nombre);
+                dev.setCategoria(sc.next());
+                System.out.println("Leguajes que domina: " + nombre);
+                while(!(lang = sc.next()).equals("x")){
+                    arr[i] = lang;
+                    i++;
+                }
+                dev.addLenguajes(arr);
+                //setear el valor de la hora
                 break;
         }
         proy.addIntegranteProy(this);
@@ -57,6 +71,7 @@ public class Integrante extends IntegranteXproyecto {
     public String toString() {
         return "Integrante{" +
                 "nombre='" + Nombre + "' Rol='" + Rol + "' Antiguedad='" + Antiguedad +
+                "Tipo='" +
                 '}';
     }
 }
