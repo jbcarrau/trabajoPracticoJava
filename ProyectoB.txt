@@ -1,6 +1,6 @@
 Proyecto
 Gestion ProyectosA
-30000
+500000
 Requerimiento funcional
 CU1A
 4.5

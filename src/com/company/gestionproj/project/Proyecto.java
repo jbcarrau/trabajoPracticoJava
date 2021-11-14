@@ -1,5 +1,6 @@
 package com.company.gestionproj.project;
 
+import com.company.gestionproj.team.Desarollador;
 import com.company.gestionproj.team.IntegranteXproyecto;
 import com.company.gestionproj.team.Integrante;
 import com.company.gestionproj.exception.RequerimientoYaTieneProyecto;
@@ -16,7 +17,7 @@ public class Proyecto implements Estimable {
 
     String nombre;
     private Double presupuesto;
-    private Double presupuestoReal;
+    private int presupuestoReal;
     private int totalHs;
 
     public Proyecto(String nombre, Double presu) { //Discriminar presupuesto por Area
@@ -56,17 +57,26 @@ public class Proyecto implements Estimable {
             person.sumaHoras(sc.nextDouble(), this);
         }
 
-    public void calculaPresOriginal(){
-            Iterator<Integrante> it = integrantes.iterator();
-            while(it.hasNext()){
-
-            }
-        }
-
-
         //Todo Si aca cierro el scanner, no me deja ejecutar el siguiente read. Cuando quiere hacer el sc.nextInt(),
         //Todo para los integrantes del proyecto B me tira la excepcion NoSuchElementException
     };
+
+    public void calculaPresOriginal(){
+        Iterator<Integrante> it = integrantes.iterator();
+        while(it.hasNext()){
+            Integrante persona = it.next();
+            //System.out.println(persona.getValorTotal());
+            presupuestoReal += persona.getValorTotal();//Todo: porque no puedo sumar con += en un Double
+        }
+    }
+
+    public int getPresupuestoReal() {
+        return presupuestoReal;
+    }
+
+    public Double getPresupuesto() {
+        return presupuesto;
+    }
 
     public void totalHs(Double total){
         totalHs += total;

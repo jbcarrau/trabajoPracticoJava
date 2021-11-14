@@ -4,8 +4,7 @@ import com.company.gestionproj.exception.RequerimientoYaTieneProyecto;
 import com.company.gestionproj.project.Proyecto;
 import com.company.gestionproj.project.RequerimientoFuncional;
 import com.company.gestionproj.project.RequerimientoNoFuncional;
-import com.company.gestionproj.team.Integrante;
-import com.company.gestionproj.team.IntegranteXproyecto;
+import com.company.gestionproj.team.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -49,9 +48,24 @@ public class ReadFile {
                     break;
                 case "integrante":
                     nombre = scanner.nextLine();
-                    rol = scanner.nextLine();
+                    rol = scanner.nextLine() ;
                     antiguedad = scanner.nextInt();
-                    in = new Integrante(proj, nombre, rol, antiguedad);
+                    rol = rol.toLowerCase() ;
+                    switch (rol) {
+                        case "desarrollador":
+                            in = new Desarollador(proj, nombre, rol, antiguedad);
+                            break;
+                        case "analista":
+                            in = new Analista(proj, nombre, rol, antiguedad);
+                            break;
+                        case "lider":
+                            in = new Lider(proj, nombre, rol, antiguedad);
+                            break;
+                        case "tester":
+                            in = new Tester(proj, nombre, rol, antiguedad);
+                            break;
+                    }
+                    //in = new Integrante(proj, nombre, rol, antiguedad);
                     break;
             }
         }

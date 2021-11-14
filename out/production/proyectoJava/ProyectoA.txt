@@ -1,6 +1,6 @@
 Proyecto
 Gestion Proyectos
-30000
+400000
 Requerimiento funcional
 CU1
 3.5

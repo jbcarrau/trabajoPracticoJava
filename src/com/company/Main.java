@@ -27,12 +27,14 @@ public class Main {
         System.out.println("Ingrese horas por Integrante: ");
         projA.registraHoras();
 
-
         //MUESTRA PROYECTOS
         System.out.println(projA);
         projA.muestraRequerimientos();
         projA.muestraIntegrantes();
         System.out.println("Total de horas: " + projA.getTotalHs());
+        projA.calculaPresOriginal();
+        System.out.println("Presupuesto Estimado: " + projA.getPresupuesto());
+        System.out.println("Presupuesto Real: " + projA.getPresupuestoReal());
 
         System.out.println("---------------------------------------------------------------");
 
@@ -40,8 +42,9 @@ public class Main {
         projB.muestraRequerimientos();
         projB.muestraIntegrantes();
         System.out.println("Total de horas: " + projB.getTotalHs());
-
-//        String[] arr= new String[]{"Python", "JavaScript"};
+        projB.calculaPresOriginal();
+        System.out.println("Presupuesto Estimado: " + projB.getPresupuesto());
+        System.out.println("Presupuesto Real: " + projB.getPresupuestoReal());
 
     }
 /*

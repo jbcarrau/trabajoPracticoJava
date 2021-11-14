@@ -1,10 +1,22 @@
 package com.company.gestionproj.team;
 
-public class Analista {
-    private String tipo;
-    private Double valorHora;
+import com.company.gestionproj.project.Proyecto;
 
-    public Analista() {}
+import java.util.Scanner;
+
+public class Analista extends Integrante{
+    private String tipo;
+    private final Double horaBase = 3000.0;
+    private Double valorTotal;
+
+
+    public Analista(Proyecto proy, String nombre, String rol, int antiguedad){
+        super(proy, nombre, rol, antiguedad);
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese tipo de Analista de " + nombre);
+        setTipo(sc.next());
+    }
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
@@ -14,12 +26,12 @@ public class Analista {
         return tipo;
     }
 
-    public void setValorHora(Double valorHora) {
-        this.valorHora = valorHora;
-    }
-
-    public Double getValorHora() {
-        return valorHora;
+    public Double getValorTotal() {
+        Double sum;
+        sum = horaBase * (0.5*getAntiguedad()) ;
+        if(getTipo().toLowerCase().equals("no funcional")){sum = sum * 1.05;}
+        valorTotal = sum*getHorasTrabajadas();
+        return valorTotal;
     }
 }
 

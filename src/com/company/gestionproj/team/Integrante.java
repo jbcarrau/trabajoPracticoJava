@@ -2,14 +2,12 @@ package com.company.gestionproj.team;
 
 import com.company.gestionproj.project.Proyecto;
 
-import java.util.Scanner;
-
-
 public class Integrante extends IntegranteXproyecto {
 
     private String Nombre;
     private String Rol;
     private int Antiguedad;
+    private Double valorTotalHoras;
 
     public Integrante(Proyecto proy, String nombre, String rol, int antiguedad) {
         Nombre = nombre;
@@ -17,43 +15,10 @@ public class Integrante extends IntegranteXproyecto {
         Antiguedad = antiguedad;
         rol = rol.toLowerCase();
 
-        Scanner sc = new Scanner(System.in);
-
-        switch(rol) {
-            case "analista":
-                Analista analist = new Analista();
-                System.out.println("Ingrese tipo de Analista de " + nombre);
-                analist.setTipo(sc.next());
-                //setear el valor de la hora
-                break;
-            case "tester":
-                Tester test = new Tester();
-                System.out.println("Ingrese tipo de Tester de " + nombre);
-                test.setTipo(sc.next());
-                //setear el valor de la hora
-                break;
-            case "lider" :
-                Lider lid = new Lider();
-                //setear el valor de la hora
-                break;
-            case "desarrollador":
-                Desarollador dev = new Desarollador();
-                String[] arr= new String[20];
-                int i = 0;
-                String lang;
-                System.out.println("Ingrese la Categoria de " + nombre);
-                dev.setCategoria(sc.next());
-                System.out.println("Leguajes que domina: " + nombre);
-                while(!(lang = sc.next()).equals("x")){
-                    arr[i] = lang;
-                    i++;
-                }
-                dev.addLenguajes(arr);
-                //setear el valor de la hora
-                break;
-        }
         proy.addIntegranteProy(this);
     }
+
+    public Integrante() {}
 
     public String getNombre(){
         return Nombre;
@@ -65,6 +30,13 @@ public class Integrante extends IntegranteXproyecto {
 
     public String getRol() {
         return Rol;
+    }
+
+    public String getCategoria(){
+        return null;
+    }
+    public Double getValorTotal(){
+        return null;
     }
 
     @Override
