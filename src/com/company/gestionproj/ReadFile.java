@@ -8,13 +8,15 @@ import com.company.gestionproj.team.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ReadFile {
 
-    String nombre, cad, rol;
+    String nombre, cad, rol, categoria, tipo;
     Double presu, estimacion;
-    int antiguedad;
+    int antiguedad, alcance;
 
     public Object readProyect(String archivo) throws FileNotFoundException, RequerimientoYaTieneProyecto {
 
@@ -49,20 +51,31 @@ public class ReadFile {
                 case "integrante":
                     nombre = scanner.nextLine();
                     rol = scanner.nextLine() ;
-                    antiguedad = scanner.nextInt();
+                    antiguedad = Integer.parseInt(scanner.nextLine());
                     rol = rol.toLowerCase() ;
                     switch (rol) {
                         case "desarrollador":
-                            in = new Desarollador(proj, nombre, rol, antiguedad);
+                            categoria = scanner.nextLine();
+                            String[] arr= new String[20];
+                            int i = 0;
+                            String lang;
+                            while(!(lang = scanner.nextLine()).equals("x")){
+                                arr[i] = lang;
+                                i++;
+                            }
+                            in = new Desarollador(proj, nombre, rol, antiguedad, categoria, arr);
                             break;
                         case "analista":
-                            in = new Analista(proj, nombre, rol, antiguedad);
+                            tipo = scanner.nextLine();
+                            in = new Analista(proj, nombre, rol, antiguedad, tipo);
                             break;
                         case "lider":
                             in = new Lider(proj, nombre, rol, antiguedad);
                             break;
                         case "tester":
-                            in = new Tester(proj, nombre, rol, antiguedad);
+                            tipo = scanner.nextLine();
+                            alcance = Integer.parseInt(scanner.nextLine());
+                            in = new Tester(proj, nombre, rol, antiguedad, tipo, alcance);
                             break;
                     }
                     //in = new Integrante(proj, nombre, rol, antiguedad);

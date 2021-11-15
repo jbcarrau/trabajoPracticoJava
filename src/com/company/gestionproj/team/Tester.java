@@ -10,14 +10,16 @@ public class Tester extends Integrante{
     private Double valorTotal;
     private int alcance;
 
-    public Tester(Proyecto proy, String nombre, String rol, int antiguedad){
+    public Tester(Proyecto proy, String nombre, String rol, int antiguedad, String tipo, int alcance){
         super(proy, nombre, rol, antiguedad);
 
-        Scanner sc = new Scanner(System.in);
+        this.tipo = tipo;
+        this.alcance = alcance;
+        /*Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese tipo de Tester de " + nombre);
         setTipo(sc.next());
         System.out.println("Ingrese cantidad de alcances testeados");
-        setAlcance(sc.nextInt());
+        setAlcance(sc.nextInt());*/
     };
 
     public void setTipo(String tipo) {
@@ -38,7 +40,7 @@ public class Tester extends Integrante{
 
     public Double getValorTotal() {
         Double sum;
-        sum = horaBase * (0.5*getAntiguedad()) ;
+        sum = (horaBase*0.005)* getAntiguedad() ;
         //Todo : agragar 2% al valor de la hora por alcance testeado.
         for(int i = 0 ; i <= getAlcance() ; i++){
             sum = sum * 1.02;

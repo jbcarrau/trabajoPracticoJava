@@ -65,7 +65,7 @@ public class Proyecto implements Estimable {
         Iterator<Integrante> it = integrantes.iterator();
         while(it.hasNext()){
             Integrante persona = it.next();
-            //System.out.println(persona.getValorTotal());
+            System.out.println(persona.getValorTotal());
             presupuestoReal += persona.getValorTotal();//Todo: porque no puedo sumar con += en un Double
         }
     }

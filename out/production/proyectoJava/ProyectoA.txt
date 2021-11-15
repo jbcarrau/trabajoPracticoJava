@@ -28,11 +28,20 @@ Integrante
 Dwight
 Tester
 5
+Dominio
+4
 Integrante
 Jim
 Analista
 5
+No funcional
 Integrante
 Oscar
 Desarrollador
 7
+Senior
+Python
+Java
+JavaScript
+NodeJs
+x

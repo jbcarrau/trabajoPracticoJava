@@ -13,10 +13,10 @@ public class Desarollador extends Integrante {
     private Double valorTotal;
     private String categoria;
 
-    public Desarollador(Proyecto proy, String nombre, String rol, int antiguedad){
+    public Desarollador(Proyecto proy, String nombre, String rol, int antiguedad, String categoria, String[] arr){
         super(proy, nombre, rol, antiguedad);
-
-        Scanner sc = new Scanner(System.in);
+        this.categoria = categoria;
+        /*Scanner sc = new Scanner(System.in);
         String[] arr= new String[20];
         int i = 0;
         String lang;
@@ -26,8 +26,11 @@ public class Desarollador extends Integrante {
         while(!(lang = sc.next()).equals("x")){
             arr[i] = lang;
             i++;
+        }*/
+        for(int i = 0 ; i < arr.length ; i ++){
+            lenguajes.add(arr[i]);
         }
-        addLenguajes(arr);
+        //addLenguajes(arr);
     };
 
     public void setCategoria(String categoria) {

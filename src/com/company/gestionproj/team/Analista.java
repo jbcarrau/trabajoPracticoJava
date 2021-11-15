@@ -10,12 +10,12 @@ public class Analista extends Integrante{
     private Double valorTotal;
 
 
-    public Analista(Proyecto proy, String nombre, String rol, int antiguedad){
+    public Analista(Proyecto proy, String nombre, String rol, int antiguedad, String tipo){
         super(proy, nombre, rol, antiguedad);
-
-        Scanner sc = new Scanner(System.in);
+        this.tipo = tipo;
+        /*Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese tipo de Analista de " + nombre);
-        setTipo(sc.next());
+        setTipo(sc.next());*/
     }
 
     public void setTipo(String tipo) {
