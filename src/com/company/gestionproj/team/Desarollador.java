@@ -16,21 +16,10 @@ public class Desarollador extends Integrante {
     public Desarollador(Proyecto proy, String nombre, String rol, int antiguedad, String categoria, String[] arr){
         super(proy, nombre, rol, antiguedad);
         this.categoria = categoria;
-        /*Scanner sc = new Scanner(System.in);
-        String[] arr= new String[20];
-        int i = 0;
-        String lang;
-        System.out.println("Ingrese la Categoria de " + nombre);
-        setCategoria(sc.next());
-        System.out.println("Leguajes que domina: " + nombre + " (x para salir)");
-        while(!(lang = sc.next()).equals("x")){
-            arr[i] = lang;
-            i++;
-        }*/
+
         for(int i = 0 ; i < arr.length ; i ++){
             lenguajes.add(arr[i]);
         }
-        //addLenguajes(arr);
     };
 
     public void setCategoria(String categoria) {

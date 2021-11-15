@@ -1,7 +1,5 @@
 package com.company.gestionproj.project;
 
-import com.company.gestionproj.team.Desarollador;
-import com.company.gestionproj.team.IntegranteXproyecto;
 import com.company.gestionproj.team.Integrante;
 import com.company.gestionproj.exception.RequerimientoYaTieneProyecto;
 import com.company.gestionproj.tiempo.Estimable;
@@ -65,8 +63,7 @@ public class Proyecto implements Estimable {
         Iterator<Integrante> it = integrantes.iterator();
         while(it.hasNext()){
             Integrante persona = it.next();
-            System.out.println(persona.getValorTotal());
-            presupuestoReal += persona.getValorTotal();//Todo: porque no puedo sumar con += en un Double
+            presupuestoReal += persona.getValorTotal();//Todo: porque no puedo sumar con += en un Double?
         }
     }
 

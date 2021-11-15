@@ -43,7 +43,6 @@ public class Integrante extends IntegranteXproyecto {
     public String toString() {
         return "Integrante{" +
                 "nombre='" + Nombre + "' Rol='" + Rol + "' Antiguedad='" + Antiguedad +
-                "Tipo='" +
                 '}';
     }
 }

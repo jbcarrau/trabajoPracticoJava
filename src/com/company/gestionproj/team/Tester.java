@@ -15,12 +15,7 @@ public class Tester extends Integrante{
 
         this.tipo = tipo;
         this.alcance = alcance;
-        /*Scanner sc = new Scanner(System.in);
-        System.out.println("Ingrese tipo de Tester de " + nombre);
-        setTipo(sc.next());
-        System.out.println("Ingrese cantidad de alcances testeados");
-        setAlcance(sc.nextInt());*/
-    };
+    }
 
     public void setTipo(String tipo) {
         this.tipo = tipo;

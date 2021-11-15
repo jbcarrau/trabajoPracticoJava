@@ -78,7 +78,6 @@ public class ReadFile {
                             in = new Tester(proj, nombre, rol, antiguedad, tipo, alcance);
                             break;
                     }
-                    //in = new Integrante(proj, nombre, rol, antiguedad);
                     break;
             }
         }

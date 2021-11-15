@@ -17,10 +17,12 @@ public class Main {
         Proyecto projB = (Proyecto)rf.readProyect("ProyectoB.txt");
 
         //INGRESO DE HORAS POR INTEGRANTE
-        System.out.println("Ingrese horas por Integrante: ");
-        projB.registraHoras();
+        System.out.println("PROYECTO A");
         System.out.println("Ingrese horas por Integrante: ");
         projA.registraHoras();
+        System.out.println("PROYECTO B");
+        System.out.println("Ingrese horas por Integrante: ");
+        projB.registraHoras();
 
         //MUESTRA PROYECTOS
         System.out.println(projA);
